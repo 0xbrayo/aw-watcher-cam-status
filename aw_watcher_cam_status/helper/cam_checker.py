@@ -37,6 +37,10 @@ def _safe_run(cmd: list[str]) -> subprocess.CompletedProcess:
     )
 
 
+# Define stub function for non-Windows platforms
+def _win_cam_active() -> Optional[bool]:
+    return None
+
 if sys.platform.startswith("win"):
     import ctypes
     import winreg
